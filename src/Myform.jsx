@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "C:/html and css projecg/vite-project/build/css/demo.css";
-import "C:/html and css projecg/vite-project/build/css/intlTelInput.css";
+import "../build/css/demo.css";
+import "../build/css/intlTelInput.css";
 import "./App.css";
 import { Form, useForm } from "react-hook-form"
 import axios from 'axios';
@@ -169,7 +169,7 @@ export const Myform = () => {
       <img
         alt="description"
         className="image"
-        src="new.jpeg"
+        src="./new.jpeg"
       />
         <form action="" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
@@ -202,10 +202,6 @@ export const Myform = () => {
           <input
             {...register("Workemail", {
               required: "Work email is required",
-              pattern: {
-                value: /^[^@s]+@[^@s.]+\.[^@.s]+$/,
-                message: "Invalid email address"
-              }
             })}
             placeholder="Work email"
             type="email"
@@ -216,10 +212,6 @@ export const Myform = () => {
           <input
             {...register("phone", {
               required: "Phone number is required",
-              pattern: {
-                value: /^[+]*[0-9]{1,4}[ ]?[0-9]+$/,
-                message: "Invalid phone number"
-              }
             })}
             defaultValue="+1 "
             id="phone"
